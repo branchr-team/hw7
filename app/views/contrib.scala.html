@@ -1,0 +1,13 @@
+@(params: String, js: String, html: String, css: String)
+
+<html>
+    <head>
+        <style type="text/css">${this.engine.css}</style>
+        <script type="text/javascript">
+        var params = @params;
+        @js
+        </script>
+    </head>
+    <body>@html</body>
+</html>
+
