@@ -1,0 +1,9 @@
+@(feed: Application.Feed, contribs: Seq[Application.Contrib])
+
+@main(feed.name) {
+    <a href="@routes.Application.feeds"><- Back</a>
+    <h1>@feed.name</h1>
+    @contribs.map { c =>
+      <iframe srcdoc="@contrib(c).toString()" width="500" height="500"></iframe><br>
+    }
+}

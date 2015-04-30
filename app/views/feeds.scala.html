@@ -1,0 +1,12 @@
+@(feeds: Seq[Application.Feed])
+
+@main("Feeds") {
+    <h1>Feeds</h1>
+    <ul>
+    @feeds.map { feed =>
+        <li>
+            <a href="@routes.Application.feed(feed.id)">@feed.name</a>
+        </li>
+    }
+    </ul>
+}

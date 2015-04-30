@@ -1,13 +1,12 @@
-@(params: String, js: String, html: String, css: String)
-
+@(contrib: Application.Contrib)
 <html>
     <head>
-        <style type="text/css">${this.engine.css}</style>
+        <style>@Html(contrib.engine.css)</style>
         <script type="text/javascript">
-        var params = @params;
-        @js
+        var params = @Html(contrib.params.toString);
+        @Html(contrib.engine.js)
         </script>
     </head>
-    <body>@html</body>
+    <body>@Html(contrib.engine.html)</body>
 </html>
 
