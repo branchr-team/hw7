@@ -1,12 +1,19 @@
 @(contrib: Application.Contrib)
+
+<!DOCTYPE html>
+
 <html>
     <head>
         <style>@Html(contrib.engine.css)</style>
-        <script type="text/javascript">
-        var params = @Html(contrib.params.toString);
-        @Html(contrib.engine.js)
-        </script>
     </head>
-    <body>@Html(contrib.engine.html)</body>
+    <body>
+        @Html(contrib.engine.html)
+        <script type="text/javascript">
+            window.onload = function() {
+                var $params = @Html(contrib.params.toString);
+                @Html(contrib.engine.js)
+            }
+        </script>
+    </body>
 </html>
 
